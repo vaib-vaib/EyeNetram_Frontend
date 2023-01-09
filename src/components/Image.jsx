@@ -7,7 +7,6 @@ export function Image() {
             left: "1040px",
             top: "200px",
             borderRadius : "8px", 
-            zIndex: "2",
             width: "25%",
             height: "500px",
         },

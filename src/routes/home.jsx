@@ -11,7 +11,7 @@ export default function HomePage() {
       <Hero
         title="Welcome to EyeNetram!"
         content="This system provides a retinal image classification into 4 classes - Gluacoma, Diabetic Retinopathy, Age
-        related macular degeneration and normal eye"
+        related macular degeneration and normal eye. Upload your fundus image to get the result"
         />
         <Image />
     </Layout>
