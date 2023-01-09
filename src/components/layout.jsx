@@ -3,7 +3,6 @@ import React from 'react'
 import { BackgroundGradient } from './background-gradient'
 import { Header } from './header'
 import { Footer } from './footer'
-import { Image } from './Image'
 
 export function Layout({ children }) {
   return (
@@ -12,7 +11,6 @@ export function Layout({ children }) {
       <Header />
       <main className="flex-shrink-0 flex-grow items-center lg:flex">
       {children}
-      <Image />
       </main>
       <Footer />
     </div>

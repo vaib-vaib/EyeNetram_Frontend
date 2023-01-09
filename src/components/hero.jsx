@@ -4,6 +4,16 @@ import ScrollReveal from 'scrollreveal'
 import { UploadImages } from './upload-form'
 
 export function Hero({ title, content, illustration }) {
+  const styles = {
+    heading: {
+      textAlign:"left",
+      fontSize:"55px",
+      color:"Black",
+      letteSpacing:"1px",
+      fontFamily:"Playfair Display",
+      fontWeight:"700",
+  },
+}
   const scrollRevealRef = useRef([])
 
   useEffect(() => {
@@ -33,7 +43,7 @@ export function Hero({ title, content, illustration }) {
             <div className="mx-auto w-full max-w-3xl">
               <h1
                 ref={(el) => (scrollRevealRef.current[0] = el)}
-                className="mt-0 mb-4 text-4xl font-bold md:text-5xl "
+                style={styles.heading}
               >
                 {title}
               </h1>
@@ -46,9 +56,8 @@ export function Hero({ title, content, illustration }) {
             </div>
 
             <div ref={(el) => (scrollRevealRef.current[2] = el)}>
+            <br></br>
               <UploadImages
-                className="m-0 mt-8 max-w-md md:flex"
-                submitBtn="Upload Image"
               />
             </div>
           </div>
