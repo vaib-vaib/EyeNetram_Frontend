@@ -56,7 +56,6 @@ export function Hero({ title, content, illustration }) {
             </div>
 
             <div ref={(el) => (scrollRevealRef.current[2] = el)}>
-            
               <UploadImages
               />
             </div>

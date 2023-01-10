@@ -16,17 +16,20 @@ export default function ContactPage() {
     head: {
       verticalAlign: "text-top",
     },
+    text:{
+        fontWeight: "bold",
+      },
   };
   return (
     <Layout>
       <Article>
         <ArticleContent style={styles.head} title="Contact">
-          <p>Feel free to contact the following email ids</p>
+          <h2>Feel free to contact the following email ids</h2><br></br>
           <ol>  
-              <li>mitali.deshpande@cumminscollege.in</li>  
-              <li>vaibhavi.ambarkar@cumminscollege.in</li>  
-              <li>siddhi.bhutada@cumminscollege.in</li>  
-              <li>diksha.sharma@cumminscollege.in</li>  
+              <li> <p style={styles.text}>mitali.deshpande@cumminscollege.in</p></li><br></br>
+              <li> <p style={styles.text}>vaibhavi.ambarkar@cumminscollege.in</p></li> <br></br>
+              <li> <p style={styles.text}>siddhi.bhutada@cumminscollege.in</p></li><br></br>
+              <li> <p style={styles.text}>diksha.sharma@cumminscollege.in</p></li><br></br>
           </ol>  
         </ArticleContent>
 
