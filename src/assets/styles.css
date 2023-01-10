@@ -290,7 +290,6 @@ Make sure disabled buttons don't get the pointer cursor.
    This can trigger a poorly considered lint error in some tools but is included by design.
 */
 img,
-.logoimg,
 svg,
 video,
 canvas,
@@ -304,14 +303,7 @@ object {
 /*
 Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
 */
-.logoimg {
-  position: absolute;
-  left: 1050px;
-  top: 230px;
-  border-radius: 8px;
-  z-index: 2;
-  width: 300px
-}
+img,
 video {
   max-width: 100%;
   height: auto;
@@ -1208,17 +1200,6 @@ select {
  * Utilites
  * -----------------------------------------------------------------------------
  */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
 .absolute {
   position: absolute;
 }
@@ -1299,9 +1280,6 @@ select {
 .mb-4 {
   margin-bottom: 1rem;
 }
-.mt-8 {
-  margin-top: 2rem;
-}
 .-ml-6 {
   margin-left: -1.5rem;
 }
@@ -1314,11 +1292,11 @@ select {
 .ml-4 {
   margin-left: 1rem;
 }
-.mt-2 {
-  margin-top: 0.5rem;
+.mt-8 {
+  margin-top: 2rem;
 }
-.-mt-px {
-  margin-top: -1px;
+.block {
+  display: block;
 }
 .flex {
   display: flex;
@@ -1347,11 +1325,11 @@ select {
 .max-w-screen-sm {
   max-width: 576px;
 }
-.max-w-md {
-  max-width: 28rem;
-}
 .max-w-screen-2xl {
   max-width: 1440px;
+}
+.max-w-md {
+  max-width: 28rem;
 }
 .flex-none {
   flex: none;
@@ -1359,17 +1337,11 @@ select {
 .flex-shrink-0 {
   flex-shrink: 0;
 }
-.flex-shrink {
-  flex-shrink: 1;
-}
 .flex-grow {
   flex-grow: 1;
 }
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.cursor-pointer {
-  cursor: pointer;
 }
 .flex-col {
   flex-direction: column;
@@ -1389,24 +1361,11 @@ select {
 .overflow-hidden {
   overflow: hidden;
 }
-.whitespace-nowrap {
-  white-space: nowrap;
-}
-.rounded-sm {
-  border-radius: 0.125rem;
-}
 .border {
   border-width: 1px;
 }
-.border-0 {
-  border-width: 0px;
-}
 .border-b {
   border-bottom-width: 1px;
-}
-.border-gray-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(203 213 225 / var(--tw-border-opacity));
 }
 .bg-gray-100 {
   --tw-bg-opacity: 1;
@@ -1423,24 +1382,13 @@ select {
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
-.bg-gradient-to-r {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
 .from-primary-600 {
   --tw-gradient-from: #4f46e5;
   --tw-gradient-to: rgb(79 70 229 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-.from-secondary-500 {
-  --tw-gradient-from: #f43f5e;
-  --tw-gradient-to: rgb(244 63 94 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
 .to-primary-400 {
   --tw-gradient-to: #818cf8;
-}
-.to-secondary-400 {
-  --tw-gradient-to: #fb7185;
 }
 .px-6 {
   padding-left: 1.5rem;
@@ -1457,22 +1405,6 @@ select {
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
-}
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.px-7 {
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
 }
 .pb-16 {
   padding-bottom: 4rem;
@@ -1501,30 +1433,17 @@ select {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
 .font-bold {
   font-weight: 700;
 }
-.font-medium {
-  font-weight: 500;
-}
 .uppercase {
   text-transform: uppercase;
-}
-.italic {
-  font-style: italic;
 }
 .leading-5 {
   line-height: 1.25rem;
 }
 .leading-none {
   line-height: 1;
-}
-.leading-4 {
-  line-height: 1rem;
 }
 .tracking-normal {
   letter-spacing: 0em;
@@ -1545,15 +1464,8 @@ select {
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.shadow-none {
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-.shadow-lg {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+.outline {
+  outline-style: solid;
 }
 .drop-shadow-2xl {
   --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
