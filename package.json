@@ -14,6 +14,7 @@
     "url": "https://github.com/lukemcdonald/holly-react/issues"
   },
   "scripts": {
+    "start":"nodemon index.js",
     "build": "npm run build:css && vite build",
     "build:css": "postcss styles/tailwind.css -o src/assets/styles.css",
     "dev": "concurrently \"npm run dev:css\" \"vite\"",
@@ -24,7 +25,12 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "gh-pages": "^4.0.0",
+    "mongoose": "^6.8.3",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.20",
     "postcss-import": "^15.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
