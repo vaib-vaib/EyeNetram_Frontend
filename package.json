@@ -1,6 +1,6 @@
 {
-  "version": "2.0.0",
-  "name": "holly-react",
+  "version": "1.0.0",
+  "name": "Eyenetram",
   "description": "React version of Holly",
   "author": "Team Eyenetram",
   "homepage": "./",
@@ -14,7 +14,7 @@
     "url": "https://github.com/lukemcdonald/holly-react/issues"
   },
   "scripts": {
-    "start":"nodemon index.js",
+    "start": "nodemon index.js",
     "build": "npm run build:css && vite build",
     "build:css": "postcss styles/tailwind.css -o src/assets/styles.css",
     "dev": "concurrently \"npm run dev:css\" \"vite\"",
@@ -24,6 +24,10 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@tensorflow-models/mobilenet": "^2.0.4",
+    "@tensorflow/tfjs": "^4.2.0",
+    "@tensorflow/tfjs-converter": "^1.2.1",
+    "@tensorflow/tfjs-core": "^1.2.1",
     "clsx": "^1.2.1",
     "cors": "^2.8.5",
     "express": "^4.18.2",
