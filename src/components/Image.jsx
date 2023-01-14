@@ -4,7 +4,7 @@ export function Image() {
     const styles = {
         logoimg: {
             position: "absolute",
-            left: "1040px",
+            left: "955px",
             top: "200px",
             borderRadius : "8px", 
             width: "25%",

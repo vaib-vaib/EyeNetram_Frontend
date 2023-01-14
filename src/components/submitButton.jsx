@@ -1,10 +1,36 @@
 import React from 'react'
-function myFunction(){
-    const newLocal = "Image submitted sucessfully";
-    alert(newLocal);
+import { useState, useEffect } from 'react'
+import * as tf from '@tensorflow/tfjs';
+import { UploadImages } from './upload-form';
+
+const myFunction = async () => {
+    const results 
 }
 
 export function SubmitButton() {
+    const [isModelLoadImg, setIsModelLoading] = useState(false)
+    const [model, setModel] = useState(null)
+
+  const loadModel = async () => {
+    setIsModelLoading(true)
+    try{
+      const model = await tf.loadLayersModel("localstorage://localhost:5173/tfjs/vgg16.json")
+      setModel(model)
+      setIsModelLoading(false)
+    }catch(error){
+      console.log(error)
+      setIsModelLoading(false)
+    }
+  }
+  const basename = import.meta.env.BASE_URL
+
+  useEffect(() => {
+    loadModel()
+  }, [])
+
+  if (isModelLoadImg){
+    
+  }
     const styles = {
         sButton: {
             display: "flex",
@@ -21,6 +47,6 @@ export function SubmitButton() {
         },
       };
     return (
-        <div  style={styles.sButton}> <button onClick={myFunction}>Submit</button></div>
+        <div style={styles.sButton}> <button onClick={ myFunction }>Submit</button></div>
     )
 }

@@ -3,6 +3,8 @@ import { SubmitButton } from "./submitButton";
 
 export function UploadImages(){
 
+    const [imageURL, setImageURL] = useState(null);
+
     const styles = {
         button: {
             padding:"5px 10px",
@@ -28,12 +30,25 @@ export function UploadImages(){
         const result = await onSubmit(UploadImage)
         console.log(result)
         setSuccess(true)
-      } 
+    }
+
+    function uploadImage(e){
+        const { files } = e.target
+        if(files.length > 0)
+        {
+            const url = URL.createObjectURL(files[0])
+            setImageURL(url)
+        }else{
+            setImageURL(null)
+        }
+    }
+
+    console.log(imageURL)
     
     return (
         <><div className="m-0 mt-8 max-w-md md:flex" style={styles.button}>
 
-            <input type="file" name="UploadedImage" accept="image/x-png,image/jpg,image/jpeg"/>
+            <input type="file" name="UploadedImage" accept="image/x-png,image/jpg,image/jpeg" onChange={uploadImage}/>
             <img src={file} />
         </div><SubmitButton /></>
         

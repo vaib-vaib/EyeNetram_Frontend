@@ -100,7 +100,7 @@ export default function Login() {
   const database = [
     {
       username: "user1",
-      password: "pass1"
+      password: "mnbv@1234"
     },
     {
       username: "user2",
